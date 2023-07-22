@@ -28,13 +28,12 @@ st.title("UniProtKB API Connection Example")
 st.markdown("""
 This app allows you to query the UniProt API and view the results.
 
-To use the app, select the organism, specify if the results should be reviewed, choose the fields you are interested in,
-and enter the minimum and maximum mass.
+To use the app, select the organism, choose the fields you are interested in, and enter the mass range.
 
 The app will then query the UniProt API and display the results in a table below.
 
 Please not that this is a very basic example of what the uniprot api can do, there are many many more query options
-available, please see the [UniProt API User Manual](https://www.uniprot.org/help/api_queries) for more information.
+available, please see the [UniProt API User Manual](https://www.uniprot.org/help/api_queries) for more information. 
 """)
 
 
