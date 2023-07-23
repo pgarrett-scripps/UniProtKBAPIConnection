@@ -10,7 +10,7 @@ import pandas as pd
 from urllib3 import Retry
 
 
-class UniProtKBAPIConnection(ExperimentalBaseConnection[requests.Session]):
+class UniProtAPIConnection(ExperimentalBaseConnection[requests.Session]):
     """Basic st.experimental_connection implementation for UniProt API"""
 
     LINK_REGEX = re.compile(r'<(.+)>; rel="next"')

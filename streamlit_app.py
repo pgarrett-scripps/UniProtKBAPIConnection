@@ -1,5 +1,5 @@
 import streamlit as st
-from uniprot_conn import UniProtKBAPIConnection
+from uniprot_conn import UniProtAPIConnection
 
 FIELDS = {
     'Entry': 'accession',
@@ -23,7 +23,7 @@ ORGANISM_IDS = {
     'Rat': '10116'
 }
 
-st.title("UniProtKB API Connection Example")
+st.title("UniProt API Connection Example")
 
 st.markdown("""
 This app allows you to query the UniProt API and view the results.
@@ -37,7 +37,7 @@ available, please see the [UniProt API User Manual](https://www.uniprot.org/help
 """)
 
 
-with st.expander('Show UniProtKBAPIConnection class'):
+with st.expander('Show UniProtAPIConnection class'):
     st.code("""
     
 import re
@@ -52,7 +52,7 @@ import pandas as pd
 from urllib3 import Retry
 
 
-class UniProtKBAPIConnection(ExperimentalBaseConnection[requests.Session]):
+class UniProtAPIConnection(ExperimentalBaseConnection[requests.Session]):
 
     LINK_REGEX = re.compile(r'<(.+)>; rel="next"')
 
@@ -122,7 +122,7 @@ class UniProtKBAPIConnection(ExperimentalBaseConnection[requests.Session]):
 
 
 # create an instance of UniProtAPIConnection
-uniprot_conn = UniProtKBAPIConnection("UniProt Connection")
+uniprot_conn = UniProtAPIConnection("UniProt Connection")
 
 organism_id = st.selectbox("organism:", list(ORGANISM_IDS.keys()), 1)
 organism_id = ORGANISM_IDS[organism_id]
